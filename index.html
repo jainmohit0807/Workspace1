@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function onpressed() {
+            let row=document.getElementById('row1').value;
+            let column=document.getElementById('column1').value;
+            let html = '<table>';
+
+            row=Number(row);
+            column=Number(column);
+            debugger;
+            for(let x of Array(row).keys())
+            {
+                html=html+'<tr>';
+                for(let y of Array(column).keys())
+                {
+                    html=html+`<td>${(x+1)*(y+1)}</td>`;
+                }
+                html=html+'</tr>';
+            }
+
+            html=html+'</table>';
+            document.write(html);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Multiplication Table chart:-</h2>
+        <label>
+            Row input
+            <input id='row1' type="text">
+        </label>
+        <label>
+            Column input
+            <input id='column1' type="text">
+        </label>
+        <button onclick="onpressed()">Click me</button>
+    </body>
+</html>
